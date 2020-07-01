@@ -4,16 +4,22 @@ export default function FunctionUI(props) {
    const renderInputs = (num) => {
       const inputs = [];
       for (let i = 0; i < num; i++) {
+         const id = `input- ${props.name} - ${i}`;
          // render some JSX
          inputs.push(
-            <input type="text" className="form-control inline-action" />
+            <input
+               type="text"
+               className="form-control inline-action"
+               key={id}
+               id={id}
+            />
          );
       }
       return inputs;
    };
 
    return (
-      <div className="col-12 col-lg-8 offset-lg-2 mb-5">
+      <div>
          <p className="name">
             <b>{props.name}</b> &nbsp;- &nbsp;
             {props.desc}

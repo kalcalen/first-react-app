@@ -148,7 +148,7 @@ export const uiData = [
       order: 106,
    },
    {
-      name: "Decrement",
+      name: "decrement",
       desc: "Input any number to decrement 1",
       inputs: 1,
       type: "basic",
@@ -157,7 +157,7 @@ export const uiData = [
       order: 105,
    },
    {
-      name: "Increment",
+      name: "increment",
       desc: "Input any number to increment by 1",
       inputs: 1,
       type: "basic",
