@@ -103,7 +103,7 @@ export const uiData = [
       order: 111,
    },
    {
-      name: "ConcatenatingStringsVariables",
+      name: "concatenatingStringsVariables",
       desc: "Set myName and myHobby to complete the string",
       inputs: 2,
       type: "basic",
@@ -121,7 +121,7 @@ export const uiData = [
       order: 109,
    },
    {
-      name: "Concatenating",
+      name: "concatenating",
       desc: "Concatenate using a string Plus operator (+)",
       inputs: 2,
       type: "basic",
