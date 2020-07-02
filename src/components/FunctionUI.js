@@ -21,6 +21,16 @@ export default function FunctionUI(props) {
       return inputs;
    };
 
+   function getUserInput() {
+      console.log("clicked!");
+      const inputValues = [];
+      for (let i = 0; i < props.inputs; i++) {
+         const element = document.getElementById(`input- ${props.name} - ${i}`);
+         const value = element.value;
+         inputValues.push(value);
+      }
+      console.log(inputValues);
+   }
    return (
       <div className="col-12 col-lg-8 offset-lg-2 mb-5">
          <p className="name">
@@ -32,7 +42,12 @@ export default function FunctionUI(props) {
          </pre>
          <div className="actions float-right">
             {renderInputs(props.inputs)}
-            <button className="btn btn-primary inline-action">Run</button>
+            <button
+               className="btn btn-primary inline-action"
+               onClick={() => getUserInput()}
+            >
+               Run
+            </button>
          </div>
          <div className="clearfix mb-3"></div>
          <div className="alert alert-primary" style={{ display: "none" }}></div>
