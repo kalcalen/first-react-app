@@ -5,7 +5,6 @@ import FunctionUI from "./components/FunctionUI";
 import orderBy from "lodash/orderBy";
 
 export default class App extends React.Component {
-   // https://reactjs.org/docs/components-and-props.html - link to understand components
    constructor() {
       super();
       console.log(uiData);
@@ -16,7 +15,6 @@ export default class App extends React.Component {
       const getFunctionsNum = () => {
          return uiData.length;
       };
-
       return (
          <div className="container">
             <div className="row ">
@@ -55,7 +53,6 @@ export default class App extends React.Component {
                         Favorites
                      </label>
                   </div>
-
                   <div className="row mt-3">
                      <div className="col-6">
                         <input

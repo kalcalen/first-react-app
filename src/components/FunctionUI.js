@@ -19,7 +19,7 @@ export default function FunctionUI(props) {
    };
 
    return (
-      <div>
+      <div className="col-12 col-lg-8 offset-lg-2 mb-5">
          <p className="name">
             <b>{props.name}</b> &nbsp;- &nbsp;
             {props.desc}
