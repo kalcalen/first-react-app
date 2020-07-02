@@ -3,15 +3,38 @@ import "./style/master.scss"; // applies global scss styles
 import { uiData } from "./data/ui";
 import FunctionUI from "./components/FunctionUI";
 import orderBy from "lodash/orderBy";
+import filter from "lodash";
 
 export default class App extends React.Component {
    constructor() {
       super();
       console.log(uiData);
+      this.state = {
+         isFavoritesChecked: false,
+         allFuncs: uiData,
+         displayFuncs: uiData,
+      };
    }
-   render() {
-      const orderedData = orderBy(uiData, "name", "asc");
 
+   toggleFavorites(e) {
+      this.setState({ isFavoritesChecked: !this.state.isFavoritesChecked });
+      const userInput = e.target.id;
+      console.log(userInput);
+      const allFuncs = [...this.state.allFuncs];
+      if (userInput === "viewMode-favorites") {
+         const filteredFuncs = allFuncs.filter((func) => {
+            return func.isFavorite;
+         });
+         console.log(filteredFuncs);
+         this.setState({ displayFuncs: filteredFuncs });
+      } else {
+         this.setState({ displayFuncs: allFuncs });
+      }
+   }
+
+   getStuff() {}
+
+   render() {
       const getFunctionsNum = () => {
          return uiData.length;
       };
@@ -25,12 +48,16 @@ export default class App extends React.Component {
                   <p className="text-center lead mb-4">
                      {getFunctionsNum()} &nbsp;functions documented
                   </p>
-                  <div class="custom-control custom-radio custom-control-inline">
+                  <div className="custom-control custom-radio custom-control-inline">
                      <input
                         type="radio"
                         id="viewMode-all"
                         name="viewMode"
                         className="custom-control-input"
+                        checked={!this.state.isFavoritesChecked}
+                        onChange={(e) => {
+                           this.toggleFavorites(e);
+                        }}
                      />
                      <label
                         className="custom-control-label"
@@ -45,6 +72,10 @@ export default class App extends React.Component {
                         id="viewMode-favorites"
                         name="viewMode"
                         className="custom-control-input"
+                        checked={this.state.isFavoritesChecked}
+                        onChange={(e) => {
+                           this.toggleFavorites(e);
+                        }}
                      />
                      <label
                         className="custom-control-label"
@@ -74,7 +105,7 @@ export default class App extends React.Component {
                      </div>
                   </div>
                </div>
-               {orderedData.map((functionUI) => {
+               {this.state.displayFuncs.map((functionUI) => {
                   const { name, desc, inputs } = functionUI;
 
                   return (
