@@ -1,6 +1,9 @@
 import React from "react";
+import utils from "../utils/utils";
 
 export default function FunctionUI(props) {
+   console.log(utils.add);
+
    const renderInputs = (num) => {
       const inputs = [];
       for (let i = 0; i < num; i++) {

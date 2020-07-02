@@ -185,7 +185,7 @@ class utils {
    static indexOf(inputIndexOf) {
       const arr = [12, 43, 27, 74];
 
-      return arr.indexOf(inputIndexOf) != -1;
+      return arr.indexOf(inputIndexOf) !== -1;
    }
 
    // spliceAdd
@@ -254,7 +254,6 @@ class utils {
          }
       } //
       return "No such contact";
-      console.log(lookUpProfile("Akira", "likes"));
    }
 
    // Counting cards function
@@ -280,6 +279,7 @@ class utils {
          case "A":
             count--;
             break;
+         default:
       }
 
       // Variable that tells player to either "Hold" or "Bet"
@@ -299,11 +299,11 @@ class utils {
       return output;
 
       // Results of function. cc = card count
-      cc(2);
-      cc(3);
-      cc(7);
-      cc("K");
-      cc("A");
+      // cc(2);
+      // cc(3);
+      // cc(7);
+      // cc("K");
+      // cc("A");
    }
 
    // Includes Method
@@ -404,7 +404,8 @@ class utils {
 
    // Concat Method
    static combineConcat(concatInput1, concatInput2) {
-      return (newConcatArray = concatInput1.concat(concatInput2));
+      let newConcatArray = concatInput1.concat(concatInput2);
+      return newConcatArray;
    }
 
    // Remove elements from an array using slice instead of splice
@@ -429,25 +430,25 @@ class utils {
       return newArray;
    }
 
-   // Impletment the filter method on a prototype
-   static filterMethod(input) {
-      var randomArr = [35, 87, 22, 96, 22, 66, 8, input];
+   //    // Impletment the filter method on a prototype
+   //    static filterMethod(input) {
+   //       var randomArr = [35, 87, 22, 96, 22, 66, 8, input];
 
-      Array.prototype.userFilter = function (oddNumbers) {
-         var newArray = [];
+   //       Array.prototype.userFilter = function (oddNumbers) {
+   //          var newArray = [];
 
-         // Empty array that numbers will be pushed into
-         for (let i = 0; i <= this.length; i++) {
-            if (oddNumbers(this[i])) {
-               newArray.push(this[i]);
-            }
-         }
-         return newArray;
-      };
-      // filteredArray takes array filters out all odd numbers
-      var filteredArray = randomArr.userFilter(function (item) {
-         return item % 2 === 1;
-      });
-      return filteredArray;
-   }
+   //          // Empty array that numbers will be pushed into
+   //          for (let i = 0; i <= this.length; i++) {
+   //             if (oddNumbers(this[i])) {
+   //                newArray.push(this[i]);
+   //             }
+   //          }
+   //          return newArray;
+   //       };
+   //       // filteredArray takes array filters out all odd numbers
+   //       var filteredArray = randomArr.userFilter(function (item) {
+   //          return item % 2 === 1;
+   //       });
+   //       return filteredArray;
+   //    }
 }
