@@ -2,7 +2,7 @@ import React from "react";
 import "./style/master.scss"; // applies global scss styles
 import { uiData } from "./data/ui";
 import FunctionUI from "./components/FunctionUI";
-import orderBy from "lodash";
+import orderBy from "lodash/orderBy";
 // import orderBy from "lodash/orderBy";
 // import filter from "lodash";
 
